@@ -50,7 +50,8 @@ class IndexController extends Controller
         $danhmuc2 = Menu::where('danhmuc_id','=',6)->paginate(9);
         $danhmuc3 = Menu::where('danhmuc_id','=',7)->paginate(9);
         $danhmuc4 = Menu::where('danhmuc_id','=',8)->paginate(9);
-        return view('Hambuger.Page.trangchu',compact('menu','menu1','danhmuc','danhmuc1','danhmuc2','danhmuc3','danhmuc4','menu_theoloai'));
+        // return view('Hambuger.Page.trangchu',compact('menu','menu1','danhmuc','danhmuc1','danhmuc2','danhmuc3','danhmuc4','menu_theoloai'));
+        return view('Hambuger.Page.trangchu',compact('menu','danhmuc','danhmuc1','danhmuc2','danhmuc3','danhmuc4'));
     }
 
     public function loaimenu($type){
@@ -107,7 +108,8 @@ class IndexController extends Controller
 
     public function getCheckout(Request $request){
         $notea = TuyChon::join('menu','tuychon.menu_id','=','menu.id')
-              ->select('menu.id','tuychon.matuychon','tuychon.tentuychon','tuychon.menu_id','menu.tensp')
+            //   ->select('menu.id','tuychon.matuychon','tuychon.tentuychon','tuychon.menu_id','menu.tensp')
+            ->select('menu.id','tuychon.tentuychon','tuychon.menu_id','menu.tensp')
               ->get();
         $map = Maps::pluck('maps','id');
         $menu = Menu::select('id')->get();
@@ -115,7 +117,8 @@ class IndexController extends Controller
         return view('Hambuger.Page.dathang',compact('map','luachon','notea','menu'));
     }
 
-    public function postCheckout(IndRequest $req){
+    // public function postCheckout(IndRequest $req){
+        public function postCheckout(Request $req){
         $cart = Session::get('cart');
 
         $customer = new DiaChiKhachHang();

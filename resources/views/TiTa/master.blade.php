@@ -59,7 +59,7 @@
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
         <!--logo start-->
-        <a href="{!! route('trangchu') !!}" class="logo"><b>HAMBURGER TITA	</b></a>
+        <a href="{!! route('trangchu') !!}" class="logo"><b>KFC Nguyễn Thành Trung</b></a>
         <!--logo end-->
         <div class="nav notify-row" id="top_menu">
             <!--  notification start -->
@@ -172,7 +172,7 @@
     <!--footer start-->
     <footer class="site-footer">
         <div class="text-center">
-            2018 - Tiệm bán hàng nhỏ - Hambuger TiTa.
+            2022 - Tiệm bán hàng nhỏ - KFC Nguyễn Thành Trung.
             <a href="#" class="go-top">
                 <i class="fa fa-angle-up"></i>
             </a>

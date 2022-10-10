@@ -36,7 +36,7 @@
             {{--Thêm--}}
             <a class="btn btn-primary btn-xs fa fa-pencil" onclick="return xacnhanxoa('Chắc chắn sửa')" href="{!! URL::route('suanhanvien',$item['id']) !!}"></a>
             {{--Xoá--}}
-            <a class="btn btn-danger btn-xs fa fa-trash-o" onclick="return xacnhanxoa('Chắc chắn xoá')" href="#"></a>
+            {{-- <a class="btn btn-danger btn-xs fa fa-trash-o" onclick="return xacnhanxoa('Chắc chắn xoá')" href="#"></a> --}}
         </td>
         <td>
 

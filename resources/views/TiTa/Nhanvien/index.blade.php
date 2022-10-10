@@ -19,7 +19,7 @@
                     <th><i class="fa fa-bullhorn"></i> STT</th>
                     <th class="hidden-phone"><i class="fa li_user"></i> Name</th>
                     <th><i class="li_study"></i> Position</th>
-                    <th><i class="li_study"></i> Position</th>
+                    <th><i class="li_phone"></i>Phone number</th>
                     <th><i class=" fa li_calendar"></i> Thời gian</th>
                     <th><a class="btn btn-success btn-sm pull-left" href="{!! route('themnhanvien') !!}">Add New</a></th>
                     <th><a class="btn btn-info btn-sm pull-left" id="read-data">Loading</a></th>

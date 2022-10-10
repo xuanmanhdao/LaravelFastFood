@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/',['as'=>'menu','uses'=>'IndexController@menu']);
 Route::group(['prefix'=>'Admin'],function (){
     Route::group(['prefix'=>'/'],function (){
         Route::get('/',['as'=>'trangchu','uses'=>'AdminController@gettrangchu']);

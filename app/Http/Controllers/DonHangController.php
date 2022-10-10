@@ -28,7 +28,8 @@ class DonHangController extends Controller
             ->join('nhanviens','donhang.nhanvien_id','=','nhanviens.id')
             ->select('donhang.id','donhang.tinhtrang','donhang.tongtien','donhang.ghichu','nhanviens.chucvu','diachikhachhang.diachi','diachikhachhang.hoten','diachikhachhang.sdt','nhanviens.name','donhang.created_at')
             ->get();
-        return view('TiTa.DonHang.donhang',compact('donhang','ctdh','dath','alldh','trang','nhanvien'));
+        // return view('TiTa.DonHang.donhang',compact('donhang','ctdh','dath','alldh','trang','nhanvien'));
+        return view('TiTa.DonHang.donhang',compact('donhang','ctdh','alldh','nhanvien'));
 
     }
 
@@ -100,12 +101,17 @@ class DonHangController extends Controller
             ->select('chitietdathang.id','donhang.tongtien','chitietdathang.luachon_id','menu.tensp','menu.mota','menu.gianew','chitietdathang.soluong','images.image','diachikhachhang.hoten','diachikhachhang.maps_id','diachikhachhang.sdt','diachikhachhang.diachi','diachikhachhang.email','diachikhachhang.created_at')
             ->where('donhang.id',$id)
             ->get();
-        $chitiet=ChiTietTuyChon::join('luachon','luachon.id','=','chitiettuychon.luachon_id')
+      /*   $chitiet=ChiTietTuyChon::join('luachon','luachon.id','=','chitiettuychon.luachon_id')
             ->join('tuychon','tuychon.matuychon','=','chitiettuychon.tuychon_id')
             ->select('chitiettuychon.luachon_id','tuychon.tentuychon','tuychon.menu_id')
+            ->get(); */
+            $chitiet=ChiTietTuyChon::join('luachon','luachon.id','=','chitietluachon.luachon_id')
+            ->join('tuychon','tuychon.id','=','chitietluachon.tuychon_id')
+            ->select('chitietluachon.luachon_id','tuychon.tentuychon','tuychon.menu_id')
             ->get();
 
         ;
-        return view('TiTa.DonHang.PDF',compact('dh','dh_note','dh_cart','dckh','chitiet','donhang'));
+        // return view('TiTa.DonHang.PDF',compact('dh','dh_note','dh_cart','dckh','chitiet','donhang'));
+        return view('TiTa.DonHang.PDF',compact('dh','chitiet','donhang'));
     }
 }

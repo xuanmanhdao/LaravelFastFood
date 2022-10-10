@@ -8,7 +8,7 @@ class Maps extends Model
 {
     protected $table = 'maps';
 
-    protected $fillable = ['id','maps'];
+    protected $fillable = ['id','maps', 'loai'];
 
     public $timestamps = true;
 

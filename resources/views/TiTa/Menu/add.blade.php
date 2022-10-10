@@ -46,6 +46,25 @@
                         </select>
                     </div>
                 </div>
+                {{-- Them cac truong DXM --}}
+                <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Số Lượng</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="txtsoluong" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Giá</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="txtgiacu" class="form-control">
+                    </div>
+                </div>
+                {{-- <div class="form-group">
+                    <label class="col-sm-2 col-sm-2 control-label">Giá mới</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="txtgiamoi" class="form-control">
+                    </div>
+                </div> --}}
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label">Mô tả</label>
                     <div class="col-sm-10">

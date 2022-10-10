@@ -36,7 +36,7 @@ class WareHouseController extends Controller
         $khohang->sanphamkho=$request->txtsanpham;
         $khohang->soluong=$request->txtsoluong;
         $khohang->giasanpham=$request->txtgiamua;
-        $khohang->tongtienkho=1;
+        $khohang->tongtienkho=($request->txtsoluong * $request->txtgiamua);
         $khohang->nhanvien_id=$request->sltKho;
         $khohang->save();
         return redirect()->route('xemkho')->with(['flash_message'=>'Thêm Thành Công']);
@@ -52,6 +52,7 @@ class WareHouseController extends Controller
     public function postEditKho(Request $request){
         if ($request->ajax()){
             $ctikho = KhoHang::find($request->id);
+            
             $ctikho->update($request->all());
             return response($ctikho);
         }

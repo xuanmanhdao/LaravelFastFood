@@ -23,9 +23,13 @@ class MenuController extends Controller
     public function postAdd(MenuRequest $menu_request){
         $menu = new Menu();
         $menu->tensp = $menu_request->txtmenu;
-        $menu->soluong=0;
+       /*  $menu->soluong=0;
         $menu->giaold=0;
+        $menu->gianew=0; */
+        $menu->soluong=$menu_request->txtsoluong;
+        $menu->giaold=$menu_request->txtgiacu;
         $menu->gianew=0;
+        // $menu->gianew=$menu_request->txtgiamoi;
         $menu->mota=$menu_request->txtmota;
         $menu->danhmuc_id=$menu_request->sltDanhmuc;
         $menu->save();
@@ -79,6 +83,10 @@ class MenuController extends Controller
         $menu->tensp = Request::input('txtmenu');
         $menu->mota=Request::input('txtmota');
         $menu->danhmuc_id=Request::input('sltDanhmuc');
+        // Them truong DXM
+        $menu->soluong=Request::input('txtsoluong');
+        $menu->giaold=Request::input('txtgiacu');
+        $menu->gianew=Request::input('txtgiamoi');
         $menu->save();
         if(!empty(Request::file('fImages'))){
             foreach (Request::file('fImages') as $file){
