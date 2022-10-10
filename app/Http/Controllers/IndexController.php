@@ -31,11 +31,11 @@ class IndexController extends Controller
           ->select('chitietdathang.id','chitietdathang.order_id','chitietdathang.luachon_id','chitietdathang.soluong','menu.tensp','menu.gianew','chitietdathang.tongtien','images.image')
           ->where('chitietdathang.order_id',$type)
           ->get();
-      $chitiet=ChiTietTuyChon::join('luachon','luachon.id','=','chitiettuychon.luachon_id')
-          ->join('tuychon','tuychon.matuychon','=','chitiettuychon.tuychon_id')
-          ->select('chitiettuychon.luachon_id','tuychon.tentuychon','tuychon.menu_id')
+          $chitiet=ChiTietTuyChon::join('luachon','luachon.id','=','chitietluachon.luachon_id')
+          ->join('tuychon','tuychon.id','=','chitietluachon.tuychon_id')
+          ->select('chitietluachon.luachon_id','tuychon.tentuychon','tuychon.menu_id')
           ->get();
-      return view('Hambuger.Page.Getdonhang',compact('donhang','chitietdh','chitiet','test'));
+      return view('Hambuger.Page.Getdonhang',compact('donhang','chitietdh','chitiet'));
     }
 
     public function menu(){
@@ -118,7 +118,7 @@ class IndexController extends Controller
     }
 
     // public function postCheckout(IndRequest $req){
-        public function postCheckout(Request $req){
+        public function postCheckout(IndRequest $req){
         $cart = Session::get('cart');
 
         $customer = new DiaChiKhachHang();
@@ -151,14 +151,18 @@ class IndexController extends Controller
             $bill_detail->save();
         }
 
-        foreach ($req->check as $tuychon_id) {
-          $note = new ChiTietTuyChon();
-          $note->luachon_id = $luachon->id;
-          $note->tuychon_id = $tuychon_id;
-          $note->save();
-        }
-        Session::forget('cart');
-        return redirect()->route('getdh',['id' => $bill->id])->with('thongbao','Đặt Thành Công');
+        // foreach ($req->check as $tuychon_id) {
+        //   $note = new ChiTietTuyChon();
+        //   $note->luachon_id = $luachon->id;
+        //   $note->tuychon_id = $tuychon_id;
+        //   $note->save();
+        // }
+
+        // Session::forget('cart');
+        // return redirect()->route('getdh',['id' => $bill->id])->with('thongbao','Đặt Thành Công');
+        return redirect()->back();
+        // return view('TiTa.Trangchu.login');;
+
         // return response()->json(['Đặt hàng thành công' => $bill->id], 200);
     }
 

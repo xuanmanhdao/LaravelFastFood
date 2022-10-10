@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>TiTa</title>
+<title>KFC - OLALA - KHACHHANG</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,14 +38,14 @@
 		<div class="container">
 			<div class="w3l_offers">
 			<li>
-				<img src="images/13.png" alt="" width="50px" height="50px" />
+				<img src="https://royalzeus.com.vn/wp-content/uploads/2020/10/1594117921-866-8668041_bao-24h-logo-bo-24h.png" alt="" width="50px" height="50px" />
 			</li>
 			</div>
 			<div class="agile-login">
 				<ul>
-					<li>
+					{{-- <li>
 						<a href="http://localhost:8000/Hambuger"> Chọn Tỉnh/Thành Phố </a>
-					</li>
+					</li> --}}
 					<li><a href="http://localhost:8000/Hambuger">Trợ Giúp</a></li>
 
 				</ul>
@@ -64,7 +64,7 @@
 				</ul>
 			</div>
 			<div class="w3ls_logo_products_left">
-				<h1><a href="http://localhost:8000/Hambuger">Buger TiTa</a></h1>
+				<h1><a href="http://localhost:8000/Hambuger">KFC Nguyễn Thành Trung	</a></h1>
 			</div>
 		<div class="w3l_search">
       <div class="beta-comp">
@@ -199,7 +199,7 @@
 
 			<div class="container">
 
-				<p> Copyright © 2017 BUGER Việt Nam <a href="#">BUGER</a></p>
+				<p> Copyright © 2022 KFC Nguyễn Thành Trung	 <a href="#">NGUYỄN THÀNH TRUNG</a></p>
 			</div>
 		</div>
 

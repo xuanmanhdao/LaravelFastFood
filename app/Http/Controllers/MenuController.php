@@ -28,7 +28,7 @@ class MenuController extends Controller
         $menu->gianew=0; */
         $menu->soluong=$menu_request->txtsoluong;
         $menu->giaold=$menu_request->txtgiacu;
-        $menu->gianew=0;
+        $menu->gianew=$menu_request->txtgiacu;
         // $menu->gianew=$menu_request->txtgiamoi;
         $menu->mota=$menu_request->txtmota;
         $menu->danhmuc_id=$menu_request->sltDanhmuc;
